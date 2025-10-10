@@ -3,12 +3,11 @@ using namespace std;
 
 long long bags[10005];
 
-// ✅ Проверка — успеет ли Робин украсть всё за H часов при данном K
 bool canSteal(int N, long long H, long long K) {
     long long hours = 0;
     for (int i = 0; i < N; i++) {
-        hours += (bags[i] + K - 1) / K; // округление вверх
-        if (hours > H) return false;    // досрочно прерываем
+        hours += (bags[i] + K - 1) / K; 
+        if (hours > H) return false;   
     }
     return hours <= H;
 }
